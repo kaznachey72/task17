@@ -1,13 +1,13 @@
 #--- lib ---------------------
 
 add_library(
-    cstack 
+    cmatrix
     SHARED
-    cstack.c
+    cmatrix.c
 )
 
 target_compile_options(
-    cstack 
+    cmatrix
     PRIVATE
     -Wall
     -Wextra
@@ -18,12 +18,12 @@ target_compile_options(
 #--- test --------------------
 
 add_executable(
-    libcstack_test
-    test_cstack.c
+    libcmatrix_test
+    test_cmatrix.c
 )
 
 target_compile_options(
-    libcstack_test
+    libcmatrix_test
     PRIVATE
     -Wall
     -Wextra
@@ -33,7 +33,7 @@ target_compile_options(
 )
 
 target_link_libraries(
-    libcstack_test
+    libcmatrix_test
     PRIVATE
-    -lcstack
+    -lcmatrix
 )
