@@ -8,4 +8,4 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/lib)
 add_subdirectory(${CMAKE_SOURCE_DIR}/client_cpp)
-#add_subdirectory(${CMAKE_SOURCE_DIR}/client_py)
+add_subdirectory(${CMAKE_SOURCE_DIR}/client_py)
