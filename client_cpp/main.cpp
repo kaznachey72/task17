@@ -12,8 +12,10 @@ int main()
 
     const size_t capacity = 100;
     Stack<std::string> stack(capacity);
-    std::cout << "stack create; capacity: " << capacity << std::endl;
-    std::cout << std::endl;
+    std::cout << "stack create" << '\n' 
+              << "capacity: " << capacity << '\n' 
+              << "size: " << stack.size() << '\n'
+              << std::endl;
 
 
     for (size_t i = 0; i < size; ++i) {
