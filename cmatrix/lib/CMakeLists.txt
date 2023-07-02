@@ -18,12 +18,12 @@ target_compile_options(
 #--- test --------------------
 
 add_executable(
-    libcmatrix_test
+    test_libcmatrix
     test_cmatrix.c
 )
 
 target_compile_options(
-    libcmatrix_test
+    test_libcmatrix
     PRIVATE
     -Wall
     -Wextra
@@ -33,7 +33,7 @@ target_compile_options(
 )
 
 target_link_libraries(
-    libcmatrix_test
+    test_libcmatrix
     PRIVATE
     -lcmatrix
 )

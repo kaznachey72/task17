@@ -18,12 +18,12 @@ target_compile_options(
 #--- test --------------------
 
 add_executable(
-    libcstack_test
+    test_libcstack
     test_cstack.c
 )
 
 target_compile_options(
-    libcstack_test
+    test_libcstack
     PRIVATE
     -Wall
     -Wextra
@@ -33,7 +33,7 @@ target_compile_options(
 )
 
 target_link_libraries(
-    libcstack_test
+    test_libcstack
     PRIVATE
     -lcstack
 )
