@@ -15,7 +15,7 @@ Matrix::Matrix(size_t rows, size_t cols, const double *data)
 {
     cmatrix_ = cmatrix_new(rows, cols);
     if (data) {
-        cmatrix_asign(cmatrix_, data);
+        cmatrix_assign(cmatrix_, data);
     }
 }
 

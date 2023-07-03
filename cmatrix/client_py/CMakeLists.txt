@@ -1,0 +1,1 @@
+FILE(COPY matrix.py DESTINATION ${CMAKE_BINARY_DIR}/release/)

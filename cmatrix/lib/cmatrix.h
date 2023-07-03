@@ -14,7 +14,7 @@ cmatrix_t *cmatrix_new(size_t rows, size_t cols);
 cmatrix_t *cmatrix_clone(const cmatrix_t *matrix);
 void cmatrix_del(cmatrix_t *matrix);
 
-void cmatrix_asign(cmatrix_t *matrix, const double *data);
+void cmatrix_assign(cmatrix_t *matrix, const double *data);
 void cmatrix_set(cmatrix_t *matrix, size_t row, size_t col, double value);
 double cmatrix_get(const cmatrix_t *matrix, size_t row, size_t col);
 

@@ -57,9 +57,9 @@ void test_add()
     cmatrix_t *rhs = cmatrix_new(rows, cols);
     cmatrix_t *res = cmatrix_new(rows, cols);
 
-    cmatrix_asign(lhs, lhs_data);
-    cmatrix_asign(rhs, rhs_data);
-    cmatrix_asign(res, res_data);
+    cmatrix_assign(lhs, lhs_data);
+    cmatrix_assign(rhs, rhs_data);
+    cmatrix_assign(res, res_data);
 
     //cmatrix_print(lhs);
     //cmatrix_print(rhs);
@@ -99,9 +99,9 @@ void test_sub()
     cmatrix_t *rhs = cmatrix_new(rows, cols);
     cmatrix_t *res = cmatrix_new(rows, cols);
 
-    cmatrix_asign(lhs, lhs_data);
-    cmatrix_asign(rhs, rhs_data);
-    cmatrix_asign(res, res_data);
+    cmatrix_assign(lhs, lhs_data);
+    cmatrix_assign(rhs, rhs_data);
+    cmatrix_assign(res, res_data);
 
     //cmatrix_print(lhs);
     //cmatrix_print(rhs);
@@ -141,9 +141,9 @@ void test_mul()
     cmatrix_t *rhs = cmatrix_new(rows, cols);
     cmatrix_t *res = cmatrix_new(rows, cols);
 
-    cmatrix_asign(lhs, lhs_data);
-    cmatrix_asign(rhs, rhs_data);
-    cmatrix_asign(res, res_data);
+    cmatrix_assign(lhs, lhs_data);
+    cmatrix_assign(rhs, rhs_data);
+    cmatrix_assign(res, res_data);
 
     //cmatrix_print(lhs);
     //cmatrix_print(rhs);

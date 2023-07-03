@@ -16,3 +16,4 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/cstack/client_py)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/cmatrix/lib)
 add_subdirectory(${CMAKE_SOURCE_DIR}/cmatrix/client_cpp)
+add_subdirectory(${CMAKE_SOURCE_DIR}/cmatrix/client_py)

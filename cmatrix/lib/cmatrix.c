@@ -32,7 +32,7 @@ cmatrix_t *cmatrix_new(size_t rows, size_t cols)
 cmatrix_t *cmatrix_clone(const cmatrix_t *matrix)
 {
     cmatrix_t *clone = cmatrix_new(matrix->rows, matrix->cols);
-    cmatrix_asign(clone, matrix->data);
+    cmatrix_assign(clone, matrix->data);
     return clone;
 }
 
@@ -44,7 +44,7 @@ void cmatrix_del(cmatrix_t *matrix)
     }
 }
 
-void cmatrix_asign(cmatrix_t *matrix, const double *data)
+void cmatrix_assign(cmatrix_t *matrix, const double *data)
 {
     size_t size = matrix->rows * matrix->cols;
     memcpy(matrix->data, data, size * sizeof(double));
