@@ -29,6 +29,13 @@ cmatrix_t *cmatrix_new(size_t rows, size_t cols)
     return matrix;
 }
 
+cmatrix_t *cmatrix_clone(const cmatrix_t *matrix)
+{
+    cmatrix_t *clone = cmatrix_new(matrix->rows, matrix->cols);
+    cmatrix_asign(clone, matrix->data);
+    return clone;
+}
+
 void cmatrix_del(cmatrix_t *matrix)
 {
     if (matrix) {
