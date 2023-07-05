@@ -85,16 +85,22 @@ class Matrix(object):
     def add(self, other):
         matrix = Matrix(0, 0);
         matrix._ptr = self._api.add(self._ptr, other._ptr)
+        if not matrix._ptr:
+            raise Exception("invalid operation")
         return matrix
 
     def sub(self, other):
         matrix = Matrix(0, 0);
         matrix._ptr = self._api.sub(self._ptr, other._ptr)
+        if not matrix._ptr:
+            raise Exception("invalid operation")
         return matrix
 
     def mul(self, other):
         matrix = Matrix(0, 0); 
         matrix._ptr = self._api.mul(self._ptr, other._ptr)
+        if not matrix._ptr:
+            raise Exception("invalid operation")
         return matrix
 
     def is_equals(self, other):
