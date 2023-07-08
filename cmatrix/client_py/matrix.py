@@ -60,6 +60,11 @@ class WrapperMatrix(object):
         self.is_equals.argtypes = [c_void_p, c_void_p]
         self.is_equals.restype = c_bool
 
+        # double cmatrix_det(const cmatrix_t *matrix);
+        self.det = self._lib.cmatrix_det
+        self.det.argtypes = [c_void_p]
+        self.det.restype = c_double
+
         # void cmatrix_print(const cmatrix_t *matrix);
         self.pr = self._lib.cmatrix_print
         self.pr.argtypes = [c_void_p]
@@ -105,6 +110,9 @@ class Matrix(object):
 
     def is_equals(self, other):
         return self._api.is_equals(self._ptr, other._ptr)
+
+    def det(self):
+        return self._api.det(self._ptr)
 
     def print(self):
         self._api.pr(self._ptr);
@@ -188,7 +196,28 @@ def test_mul():
     print("[", str_status(is_ok), "] TEST: A * B")
 
 
+def test_det():
+    rows = 3;
+    cols = 3;
+
+    data = [ 
+         -62,   23,  -3, 
+         174,   74, -17,
+        -176, -421, 156,
+    ]
+    det = -646800 
+
+    matrix = Matrix(rows, cols)
+    matrix.assign(data)
+
+    calc_det = matrix.det()
+    is_ok = abs(det - calc_det) < 1e-5;
+    print("[", str_status(is_ok), "] TEST: det(A)")
+
+
+
 if __name__ == "__main__":
     test_add_sub()
     test_mul()
+    test_det()
 

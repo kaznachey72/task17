@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #include "matrix.h"
 
@@ -122,10 +123,34 @@ void test_mul()
     std::cout << "[ " << (is_ok ? "Ok " : "Err" )  << " ] TEST: A * B" << std::endl;
 }
 
+void test_det()
+{
+    size_t rows = 3;
+    size_t cols = 3;
+    
+    double data[] = { 
+         -62,   23,  -3, 
+         174,   74, -17,
+        -176, -421, 156,
+    };  
+
+    double det = -646800;
+
+    Matrix matrix{rows, cols, data};
+    //matrix.print();
+
+    double calc_det = matrix.det();
+    bool is_ok = fabs(det - calc_det) < 1e-5;
+    std::cout << "[ " << (is_ok ? "Ok " : "Err" )  << " ] TEST: det(A)" << std::endl;
+}
+
+
 int main ()
 {
     test_add();
     test_sub();
     test_mul();
+    test_det();
+
     return 0;
 }

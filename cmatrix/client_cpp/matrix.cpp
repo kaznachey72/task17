@@ -77,6 +77,11 @@ bool Matrix::operator==(const Matrix &other) const
     return cmatrix_is_equals(cmatrix_, other.cmatrix_);
 }
 
+double Matrix::det() const
+{
+    return cmatrix_det(cmatrix_);
+}
+
 
 Matrix &Matrix::operator=(const Matrix &other)
 {

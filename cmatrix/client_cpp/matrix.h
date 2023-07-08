@@ -23,6 +23,8 @@ public:
     Matrix operator*(const Matrix &other) const;
     bool operator==(const Matrix &other) const;
 
+    double det() const;
+
     Matrix &operator=(const Matrix &other);
     Matrix &operator=(Matrix &&other);
 

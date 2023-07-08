@@ -36,4 +36,5 @@ target_link_libraries(
     test_libcmatrix
     PRIVATE
     -lcmatrix
+    -lm
 )

@@ -22,6 +22,8 @@ cmatrix_t *cmatrix_add(const cmatrix_t *lhs, const cmatrix_t *rhs);
 cmatrix_t *cmatrix_sub(const cmatrix_t *lhs, const cmatrix_t *rhs);
 cmatrix_t *cmatrix_mul(const cmatrix_t *lhs, const cmatrix_t *rhs);
 
+double cmatrix_det(const cmatrix_t *matrix);
+
 bool cmatrix_is_equals(const cmatrix_t *lhs, const cmatrix_t *rhs);
 void cmatrix_print(const cmatrix_t *matrix);
 

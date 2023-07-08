@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -158,10 +159,37 @@ void test_mul()
     printf("[ %s ] TEST: A * B\n", (is_ok ? "Ok " : "Err" ));
 }
 
+void test_det()
+{
+    size_t rows = 3;
+    size_t cols = 3;
+    
+    double data[] = {
+         -62,   23,  -3,
+         174,   74, -17,
+        -176, -421, 156,
+    };
+
+    double det = -646800;
+
+    cmatrix_t *matrix = cmatrix_new(rows, cols);
+    cmatrix_assign(matrix, data);
+    //cmatrix_print(matrix);
+
+    double calc_det = cmatrix_det(matrix);
+    cmatrix_del(matrix);
+
+    bool is_ok = fabs(det - calc_det) < 1e-5;
+    printf("[ %s ] TEST: det(A)\n", (is_ok ? "Ok " : "Err" ));    
+}
+
+
 int main ()
 {
     test_add();
     test_sub();
     test_mul();
-    return 0;
+    test_det();
+
+return 0;
 }
