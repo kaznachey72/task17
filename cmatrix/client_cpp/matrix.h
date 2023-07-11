@@ -12,7 +12,7 @@ public:
     Matrix();
     Matrix(size_t rows, size_t cols, const double *data = nullptr);
     Matrix(const Matrix &other);
-    Matrix(Matrix &&other);
+    Matrix(Matrix &&other) noexcept;
     ~Matrix();
 
     void set(size_t row, size_t col, double value);
@@ -26,7 +26,7 @@ public:
     double det() const;
 
     Matrix &operator=(const Matrix &other);
-    Matrix &operator=(Matrix &&other);
+    Matrix &operator=(Matrix &&other) noexcept;
 
     void print() const;
 

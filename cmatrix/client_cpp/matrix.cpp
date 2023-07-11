@@ -24,7 +24,7 @@ Matrix::Matrix(const Matrix &other)
     cmatrix_ = cmatrix_clone(other.cmatrix_);
 }
 
-Matrix::Matrix(Matrix &&other)
+Matrix::Matrix(Matrix &&other) noexcept
 {
     std::swap(cmatrix_, other.cmatrix_);
 }
@@ -92,7 +92,7 @@ Matrix &Matrix::operator=(const Matrix &other)
     return *this;
 }
 
-Matrix &Matrix::operator=(Matrix &&other)
+Matrix &Matrix::operator=(Matrix &&other) noexcept
 {
     if (this != &other) {
         std::swap(cmatrix_, other.cmatrix_);
