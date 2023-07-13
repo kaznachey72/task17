@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 
 from ctypes import c_size_t, c_bool, c_double, c_void_p, cdll
-import ctypes
+import os.path
+
+
+LIB_NAME = "libcmatrix.so"
+LIB_PATH = os.path.dirname(__file__) + os.path.sep + LIB_NAME
 
 
 def list_to_array(data):
-    array_type = ctypes.c_double * len(data)
+    array_type = c_double * len(data)
     return array_type(*data)
 
 
 class WrapperMatrix(object):
     def __init__(self):
-        self._lib = cdll.LoadLibrary("libcmatrix.so")
+        self._lib = cdll.LoadLibrary(LIB_PATH)
 
         # cmatrix_t *cmatrix_new(size_t rows, size_t cols);
         self.new = self._lib.cmatrix_new

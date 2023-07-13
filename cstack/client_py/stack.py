@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
 from ctypes import c_size_t, c_bool, c_void_p, c_char_p, Structure, POINTER, byref, cdll, string_at
+import os.path
+
+
+LIB_NAME = "libcstack.so"
+LIB_PATH = os.path.dirname(__file__) + os.path.sep + LIB_NAME
 
 
 class value_t(Structure):
@@ -9,7 +14,7 @@ class value_t(Structure):
 
 class WrapperStack(object):
     def __init__(self):
-        self.lib_cstack = cdll.LoadLibrary("libcstack.so")
+        self.lib_cstack = cdll.LoadLibrary(LIB_PATH)
 
         # value_t make_value(char *data, size_t len);
         self.make_value = self.lib_cstack.make_value
